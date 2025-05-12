@@ -24,18 +24,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
-      - name: Set up Pages
+      - name: Setup Pages
         uses: actions/configure-pages@v5
-        with:
-          # Set the base directory for Pages
-          static_site_generator: "jekyll"
-          # This tells GitHub Pages to not use Jekyll processing
-          enable_jekyll: false
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload only the pages directory
+          # Upload only the menu directory but make it serve from root
           path: 'pages/menu'
       
       - name: Deploy to GitHub Pages
